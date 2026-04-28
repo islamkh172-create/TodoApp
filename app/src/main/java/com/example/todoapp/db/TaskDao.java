@@ -1,28 +1,29 @@
 package com.example.todoapp.db;
 
 import androidx.room.*;
+import com.example.todoapp.Task;
 import java.util.List;
 
 @Dao
 public interface TaskDao {
     @Insert
-    long insert(TaskEntity task);
+    long insert(Task task);
 
     @Update
-    void update(TaskEntity task);
+    void update(Task task);
 
     @Delete
-    void delete(TaskEntity task);
+    void delete(Task task);
 
     @Query("SELECT * FROM tasks WHERE userId = :userId ORDER BY id DESC")
-    List<TaskEntity> getTasksForUser(long userId);
+    List<Task> getAll(long userId);
 
     @Query("SELECT * FROM tasks WHERE id = :id")
-    TaskEntity getById(int id);
+    Task getById(int id);
 
     @Query("SELECT COUNT(*) FROM tasks WHERE userId = :userId AND status = :status")
-    int countByStatus(long userId, String status);
+    int countStatus(long userId, String status);
 
     @Query("SELECT COUNT(*) FROM tasks WHERE userId = :userId AND LOWER(category) = LOWER(:category)")
-    int countByCategory(long userId, String category);
+    int countCategory(long userId, String category);
 }

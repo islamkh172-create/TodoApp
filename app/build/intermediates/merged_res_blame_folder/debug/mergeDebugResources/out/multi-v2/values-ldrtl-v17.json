@@ -4,7 +4,7 @@
             "outputFile": "com.example.todoapp-mergeDebugResources-34:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\9.1.0\\transforms\\45e2359df2e26cd8bd2e1ff00407f992\\workspace\\transformed\\material-1.11.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "/Users/mm/.gradle/caches/9.1.0/transforms/45e2359df2e26cd8bd2e1ff00407f992/transformed/material-1.11.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

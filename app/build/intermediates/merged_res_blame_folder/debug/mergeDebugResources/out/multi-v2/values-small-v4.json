@@ -4,7 +4,7 @@
             "outputFile": "com.example.todoapp-mergeDebugResources-34:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\DELL\\.gradle\\caches\\9.1.0\\transforms\\45e2359df2e26cd8bd2e1ff00407f992\\workspace\\transformed\\material-1.11.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "/Users/mm/.gradle/caches/9.1.0/transforms/45e2359df2e26cd8bd2e1ff00407f992/transformed/material-1.11.0/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

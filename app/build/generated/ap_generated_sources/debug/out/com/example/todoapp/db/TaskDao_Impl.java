@@ -9,6 +9,7 @@ import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
+import com.example.todoapp.Task;
 import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;
@@ -23,15 +24,15 @@ import javax.annotation.processing.Generated;
 public final class TaskDao_Impl implements TaskDao {
   private final RoomDatabase __db;
 
-  private final EntityInsertionAdapter<TaskEntity> __insertionAdapterOfTaskEntity;
+  private final EntityInsertionAdapter<Task> __insertionAdapterOfTask;
 
-  private final EntityDeletionOrUpdateAdapter<TaskEntity> __deletionAdapterOfTaskEntity;
+  private final EntityDeletionOrUpdateAdapter<Task> __deletionAdapterOfTask;
 
-  private final EntityDeletionOrUpdateAdapter<TaskEntity> __updateAdapterOfTaskEntity;
+  private final EntityDeletionOrUpdateAdapter<Task> __updateAdapterOfTask;
 
   public TaskDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
-    this.__insertionAdapterOfTaskEntity = new EntityInsertionAdapter<TaskEntity>(__db) {
+    this.__insertionAdapterOfTask = new EntityInsertionAdapter<Task>(__db) {
       @Override
       @NonNull
       protected String createQuery() {
@@ -39,8 +40,7 @@ public final class TaskDao_Impl implements TaskDao {
       }
 
       @Override
-      protected void bind(@NonNull final SupportSQLiteStatement statement,
-          final TaskEntity entity) {
+      protected void bind(@NonNull final SupportSQLiteStatement statement, final Task entity) {
         statement.bindLong(1, entity.id);
         if (entity.title == null) {
           statement.bindNull(2);
@@ -80,7 +80,7 @@ public final class TaskDao_Impl implements TaskDao {
         statement.bindLong(9, entity.userId);
       }
     };
-    this.__deletionAdapterOfTaskEntity = new EntityDeletionOrUpdateAdapter<TaskEntity>(__db) {
+    this.__deletionAdapterOfTask = new EntityDeletionOrUpdateAdapter<Task>(__db) {
       @Override
       @NonNull
       protected String createQuery() {
@@ -88,12 +88,11 @@ public final class TaskDao_Impl implements TaskDao {
       }
 
       @Override
-      protected void bind(@NonNull final SupportSQLiteStatement statement,
-          final TaskEntity entity) {
+      protected void bind(@NonNull final SupportSQLiteStatement statement, final Task entity) {
         statement.bindLong(1, entity.id);
       }
     };
-    this.__updateAdapterOfTaskEntity = new EntityDeletionOrUpdateAdapter<TaskEntity>(__db) {
+    this.__updateAdapterOfTask = new EntityDeletionOrUpdateAdapter<Task>(__db) {
       @Override
       @NonNull
       protected String createQuery() {
@@ -101,8 +100,7 @@ public final class TaskDao_Impl implements TaskDao {
       }
 
       @Override
-      protected void bind(@NonNull final SupportSQLiteStatement statement,
-          final TaskEntity entity) {
+      protected void bind(@NonNull final SupportSQLiteStatement statement, final Task entity) {
         statement.bindLong(1, entity.id);
         if (entity.title == null) {
           statement.bindNull(2);
@@ -146,11 +144,11 @@ public final class TaskDao_Impl implements TaskDao {
   }
 
   @Override
-  public long insert(final TaskEntity task) {
+  public long insert(final Task task) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      final long _result = __insertionAdapterOfTaskEntity.insertAndReturnId(task);
+      final long _result = __insertionAdapterOfTask.insertAndReturnId(task);
       __db.setTransactionSuccessful();
       return _result;
     } finally {
@@ -159,11 +157,11 @@ public final class TaskDao_Impl implements TaskDao {
   }
 
   @Override
-  public void delete(final TaskEntity task) {
+  public void delete(final Task task) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __deletionAdapterOfTaskEntity.handle(task);
+      __deletionAdapterOfTask.handle(task);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -171,11 +169,11 @@ public final class TaskDao_Impl implements TaskDao {
   }
 
   @Override
-  public void update(final TaskEntity task) {
+  public void update(final Task task) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __updateAdapterOfTaskEntity.handle(task);
+      __updateAdapterOfTask.handle(task);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
@@ -183,7 +181,7 @@ public final class TaskDao_Impl implements TaskDao {
   }
 
   @Override
-  public List<TaskEntity> getTasksForUser(final long userId) {
+  public List<Task> getAll(final long userId) {
     final String _sql = "SELECT * FROM tasks WHERE userId = ? ORDER BY id DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
@@ -200,10 +198,10 @@ public final class TaskDao_Impl implements TaskDao {
       final int _cursorIndexOfReminderTime = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderTime");
       final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
       final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "userId");
-      final List<TaskEntity> _result = new ArrayList<TaskEntity>(_cursor.getCount());
+      final List<Task> _result = new ArrayList<Task>(_cursor.getCount());
       while (_cursor.moveToNext()) {
-        final TaskEntity _item;
-        _item = new TaskEntity();
+        final Task _item;
+        _item = new Task();
         _item.id = _cursor.getInt(_cursorIndexOfId);
         if (_cursor.isNull(_cursorIndexOfTitle)) {
           _item.title = null;
@@ -251,7 +249,7 @@ public final class TaskDao_Impl implements TaskDao {
   }
 
   @Override
-  public TaskEntity getById(final int id) {
+  public Task getById(final int id) {
     final String _sql = "SELECT * FROM tasks WHERE id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
@@ -268,9 +266,9 @@ public final class TaskDao_Impl implements TaskDao {
       final int _cursorIndexOfReminderTime = CursorUtil.getColumnIndexOrThrow(_cursor, "reminderTime");
       final int _cursorIndexOfStatus = CursorUtil.getColumnIndexOrThrow(_cursor, "status");
       final int _cursorIndexOfUserId = CursorUtil.getColumnIndexOrThrow(_cursor, "userId");
-      final TaskEntity _result;
+      final Task _result;
       if (_cursor.moveToFirst()) {
-        _result = new TaskEntity();
+        _result = new Task();
         _result.id = _cursor.getInt(_cursorIndexOfId);
         if (_cursor.isNull(_cursorIndexOfTitle)) {
           _result.title = null;
@@ -319,7 +317,7 @@ public final class TaskDao_Impl implements TaskDao {
   }
 
   @Override
-  public int countByStatus(final long userId, final String status) {
+  public int countStatus(final long userId, final String status) {
     final String _sql = "SELECT COUNT(*) FROM tasks WHERE userId = ? AND status = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;
@@ -347,7 +345,7 @@ public final class TaskDao_Impl implements TaskDao {
   }
 
   @Override
-  public int countByCategory(final long userId, final String category) {
+  public int countCategory(final long userId, final String category) {
     final String _sql = "SELECT COUNT(*) FROM tasks WHERE userId = ? AND LOWER(category) = LOWER(?)";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
     int _argIndex = 1;

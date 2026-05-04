@@ -1,7 +1,7 @@
 package com.example.todoapp.db;
 
 import androidx.room.*;
-import com.example.todoapp.Task;
+
 import java.util.List;
 
 @Dao

@@ -12,7 +12,7 @@ public class AuthHelper {
             for (byte b : bytes) sb.append(String.format("%02x", b));
             return sb.toString();
         } catch (NoSuchAlgorithmException e) {
-            return password; // fallback (never happens on Android)
+            return password;
         }
     }
 

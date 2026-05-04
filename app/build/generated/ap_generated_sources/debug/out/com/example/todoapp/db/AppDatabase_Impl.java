@@ -106,7 +106,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         final TableInfo _infoTasks = new TableInfo("tasks", _columnsTasks, _foreignKeysTasks, _indicesTasks);
         final TableInfo _existingTasks = TableInfo.read(db, "tasks");
         if (!_infoTasks.equals(_existingTasks)) {
-          return new RoomOpenHelper.ValidationResult(false, "tasks(com.example.todoapp.Task).\n"
+          return new RoomOpenHelper.ValidationResult(false, "tasks(com.example.todoapp.db.Task).\n"
                   + " Expected:\n" + _infoTasks + "\n"
                   + " Found:\n" + _existingTasks);
         }

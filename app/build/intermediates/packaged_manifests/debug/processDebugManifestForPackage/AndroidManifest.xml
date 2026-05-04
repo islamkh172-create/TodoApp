@@ -34,7 +34,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.TodoApp" >
         <activity
-            android:name="com.example.todoapp.Loginactivity"
+            android:name="com.example.todoapp.activities.Loginactivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,8 +42,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.todoapp.Mainactivity" />
-        <activity android:name="com.example.todoapp.RegisterActivity" />
+        <activity android:name="com.example.todoapp.activities.Mainactivity" />
+        <activity android:name="com.example.todoapp.activities.RegisterActivity" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

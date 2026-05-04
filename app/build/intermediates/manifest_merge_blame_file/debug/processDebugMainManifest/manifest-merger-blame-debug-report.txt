@@ -60,8 +60,8 @@
 35-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:16:9-45
 36        <activity
 36-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:18:9-25:20
-37            android:name="com.example.todoapp.Loginactivity"
-37-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:19:13-42
+37            android:name="com.example.todoapp.activities.Loginactivity"
+37-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:19:13-53
 38            android:exported="true" >
 38-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:20:13-36
 39            <intent-filter>
@@ -75,12 +75,12 @@
 42-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:23:27-74
 43            </intent-filter>
 44        </activity>
-45        <activity android:name="com.example.todoapp.Mainactivity" />
-45-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:27:9-49
-45-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:27:19-47
-46        <activity android:name="com.example.todoapp.RegisterActivity" />
-46-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:28:9-53
-46-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:28:19-51
+45        <activity android:name="com.example.todoapp.activities.Mainactivity" />
+45-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:27:9-60
+45-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:27:19-58
+46        <activity android:name="com.example.todoapp.activities.RegisterActivity" />
+46-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:28:9-64
+46-->/Users/mm/AndroidStudioProjects/TDA/app/src/main/AndroidManifest.xml:28:19-62
 47
 48        <provider
 48-->[androidx.work:work-runtime:2.9.0] /Users/mm/.gradle/caches/9.1.0/transforms/2be53e97eb480349bb9afe7c9825c0c5/transformed/work-runtime-2.9.0/AndroidManifest.xml:29:9-37:20

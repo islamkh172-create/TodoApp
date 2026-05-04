@@ -16,7 +16,7 @@
         android:theme="@style/Theme.TodoApp">
 
         <activity
-            android:name=".Loginactivity"
+            android:name=".activities.Loginactivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -24,8 +24,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Mainactivity"/>
-        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".activities.Mainactivity"/>
+        <activity android:name=".activities.RegisterActivity"/>
 
     </application>
 </manifest>

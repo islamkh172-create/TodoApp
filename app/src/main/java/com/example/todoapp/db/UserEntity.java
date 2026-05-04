@@ -9,7 +9,7 @@ public class UserEntity {
     @PrimaryKey(autoGenerate = true)
     public int id;
     public String username;
-    public String passwordHash; // SHA-256 hex
+    public String passwordHash;
     public String email;
     public String fullName;
 }

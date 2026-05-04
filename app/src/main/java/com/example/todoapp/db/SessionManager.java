@@ -3,9 +3,7 @@ package com.example.todoapp.db;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * Keeps track of the currently logged-in user across app restarts.
- */
+
 public class SessionManager {
     private static final String PREF_NAME = "todo_session";
     private static final String KEY_USER_ID = "user_id";

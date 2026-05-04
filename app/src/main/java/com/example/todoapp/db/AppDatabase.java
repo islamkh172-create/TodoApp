@@ -2,7 +2,6 @@ package com.example.todoapp.db;
 
 import android.content.Context;
 import androidx.room.*;
-import com.example.todoapp.Task;
 
 @Database(entities = {Task.class, UserEntity.class}, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
